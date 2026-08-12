@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Windsor — Q2 2026 Investor Brief | Brixton Capital</title>
+<style>/* Brixton Capital brand tokens — derived from brixtoncapital.com
+   primary #c9ae7a · link-hover #a18b62 · body ink #212529 · Bootstrap system sans */
+:root {
+  color-scheme: light;
+  --gold:#c9ae7a; --gold-deep:#a18b62; --gold-wash:#faf7f1; --gold-tint:#f4efe4;
+  --surface-1:#ffffff; --plane:#ffffff; --card:#ffffff; --band:#212529;
+  --text-primary:#212529; --text-secondary:#5b5f63; --text-muted:#84898e;
+  --gridline:#e9ebed; --baseline:#ccd0d3; --border:rgba(33,37,41,0.12);
+  --series-1:#a18b62; --series-1-dim:#d3d6d9; --series-neg:#d3d6d9;
+  --good-ink:#14663a; --bad-ink:#9e2f2a;
+  --rule:#212529;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --gold:#c9ae7a; --gold-deep:#d4bc8e; --gold-wash:#221f1a; --gold-tint:#2a251c;
+    --surface-1:#16181a; --plane:#0e1011; --card:#16181a; --band:#000000;
+    --text-primary:#ffffff; --text-secondary:#c8cbce; --text-muted:#8b9197;
+    --gridline:#2a2d30; --baseline:#3a3e42; --border:rgba(255,255,255,0.13);
+    --series-1:#c9ae7a; --series-1-dim:#4a4f54; --series-neg:#4a4f54;
+    --good-ink:#4caf6d; --bad-ink:#e07872;
+    --rule:#ffffff;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --gold:#c9ae7a; --gold-deep:#d4bc8e; --gold-wash:#221f1a; --gold-tint:#2a251c;
+  --surface-1:#16181a; --plane:#0e1011; --card:#16181a; --band:#000000;
+  --text-primary:#ffffff; --text-secondary:#c8cbce; --text-muted:#8b9197;
+  --gridline:#2a2d30; --baseline:#3a3e42; --border:rgba(255,255,255,0.13);
+  --series-1:#c9ae7a; --series-1-dim:#4a4f54; --series-neg:#4a4f54;
+  --good-ink:#4caf6d; --bad-ink:#e07872;
+  --rule:#ffffff;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--plane); color:var(--text-primary);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif;
+  font-size:16px; line-height:1.62;
+}
+a{color:var(--gold-deep)}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px 90px}
+
+/* ---------- dark brand bar ---------- */
+.topbar{background:var(--band);margin:0 -24px 0;padding:16px 24px;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.wordmark{font-size:15px;font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:#fff;line-height:1}
+.wordmark i{font-style:normal;color:var(--gold);font-weight:400;letter-spacing:.34em}
+.topbar-r{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.goldrule{height:3px;background:var(--gold);margin:0 -24px}
+
+/* ---------- masthead ---------- */
+.mast{padding:40px 0 18px;border-bottom:1px solid var(--border)}
+.mast-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.brand{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep)}
+.issue{font-size:11.5px;color:var(--text-muted);letter-spacing:.05em}
+.mast h1{font-size:clamp(36px,6vw,56px);line-height:1.08;margin:14px 0 10px;font-weight:500;letter-spacing:-0.02em}
+.mast .sub{font-size:17.5px;color:var(--text-secondary);margin:0 0 24px;max-width:62ch;font-weight:400}
+.meta{display:flex;gap:24px;flex-wrap:wrap;font-size:12.5px;color:var(--text-muted);padding-bottom:16px}
+.meta b{color:var(--text-secondary);font-weight:600}
+
+.ribbon{background:var(--gold-tint);color:var(--text-primary);padding:11px 18px;font-size:11.5px;
+  letter-spacing:.15em;text-transform:uppercase;font-weight:700;display:flex;
+  justify-content:space-between;gap:12px;flex-wrap:wrap;border-left:3px solid var(--gold)}
+.ribbon.alert{background:var(--band);color:#fff}
+.ribbon.alert span:last-child{color:var(--gold)}
+
+/* ---------- hero ---------- */
+.hero{padding:34px 0 10px;display:flex;gap:36px;align-items:flex-start;flex-wrap:wrap;
+  border-bottom:1px solid var(--border)}
+.hero-fig{min-width:200px}
+.hero-fig .n{font-size:62px;line-height:1;font-weight:500;letter-spacing:-0.03em;display:block;color:var(--text-primary)}
+.hero-fig .u{display:block;width:58px;height:3px;background:var(--gold);margin:16px 0 12px}
+.hero-fig .cap{font-size:13px;color:var(--text-secondary);display:block;max-width:25ch}
+.hero-note{flex:1;min-width:290px;font-size:17px;line-height:1.6;color:var(--text-secondary)}
+.hero-note strong{color:var(--text-primary);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;
+  color:var(--text-primary);background:var(--gold-tint);padding:4px 12px;margin-top:12px;
+  border-left:2px solid var(--gold)}
+
+/* ---------- KPI tiles ---------- */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:1px;background:var(--border);border:1px solid var(--border);border-top:3px solid var(--gold);
+  margin:30px 0 8px}
+.kpi{background:var(--card);padding:18px}
+.kpi .l{font-size:11px;color:var(--text-muted);letter-spacing:.09em;text-transform:uppercase;font-weight:700}
+.kpi .v{font-size:30px;font-weight:500;letter-spacing:-0.022em;margin:8px 0 3px;line-height:1.05}
+.kpi .d{font-size:12.5px;color:var(--text-secondary)}
+.kpi .d .up{color:var(--good-ink);font-weight:650}
+.kpi .d .dn{color:var(--bad-ink);font-weight:650}
+
+/* ---------- sections ---------- */
+section{padding-top:42px}
+.sec-h{display:flex;align-items:baseline;gap:13px;border-bottom:2px solid var(--gold);
+  padding-bottom:9px;margin-bottom:22px}
+.sec-h .num{font-size:12px;font-weight:700;color:var(--gold-deep);letter-spacing:.12em}
+.sec-h h2{font-size:24px;margin:0;font-weight:500;letter-spacing:-0.018em;flex:1}
+h3{font-size:16.5px;margin:30px 0 10px;font-weight:650;letter-spacing:-0.008em}
+p{margin:0 0 15px;color:var(--text-secondary)}
+p strong,li strong{color:var(--text-primary);font-weight:600}
+.lede{font-size:17.5px;color:var(--text-primary);line-height:1.58}
+
+ul{margin:0 0 17px;padding-left:0;list-style:none}
+ul li{position:relative;padding-left:20px;margin-bottom:10px;color:var(--text-secondary)}
+ul li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;background:var(--gold)}
+
+/* ---------- callouts ---------- */
+.callout{background:var(--gold-wash);border-left:3px solid var(--gold);
+  padding:18px 22px;margin:22px 0;font-size:16px}
+.callout p:last-child{margin-bottom:0}
+.callout .k{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;
+  color:var(--gold-deep);display:block;margin-bottom:7px}
+.flag{background:var(--gold-tint);border-left-color:var(--band)}
+.flag .k{color:var(--text-primary)}
+.push{background:transparent;border:1px solid var(--border);border-left:3px solid var(--baseline)}
+.push .k{color:var(--text-secondary)}
+
+.pull{font-size:21px;line-height:1.48;font-weight:400;letter-spacing:-0.012em;
+  color:var(--text-primary);border-top:2px solid var(--gold);border-bottom:1px solid var(--border);
+  padding:22px 0;margin:28px 0;font-style:italic}
+.pull .attr{display:block;font-size:12px;font-style:normal;font-weight:600;color:var(--text-muted);
+  letter-spacing:.05em;text-transform:uppercase;margin-top:11px}
+
+/* ---------- figures ---------- */
+figure{margin:26px 0;background:var(--card);border:1px solid var(--border);
+  border-top:2px solid var(--gold);padding:20px 22px 14px}
+figcaption{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+  color:var(--gold-deep);margin-bottom:4px}
+.fig-t{font-size:17px;font-weight:600;letter-spacing:-0.012em;margin:0 0 4px;color:var(--text-primary)}
+.fig-s{font-size:13.5px;color:var(--text-secondary);margin:0 0 15px;max-width:66ch;line-height:1.5}
+.plot svg{width:100%;height:auto;display:block;overflow:visible}
+.plot .lab{font-size:13px;font-weight:500}
+.plot .lab-hi{font-weight:700}
+.plot .val{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
+.plot .val-hi{font-weight:700}
+.plot .tick{font-size:11.5px;font-variant-numeric:tabular-nums}
+.plot .reflab{font-size:11.5px;font-weight:600}
+.fig-f{font-size:12px;color:var(--text-muted);margin:12px 0 0;line-height:1.5}
+.tbtn{background:none;border:0;color:var(--gold-deep);font:inherit;font-size:12px;
+  font-weight:600;cursor:pointer;padding:8px 0 2px;text-decoration:underline;
+  text-underline-offset:3px}
+.tbtn:hover{color:var(--text-primary)}
+
+/* ---------- tables ---------- */
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:6px 0 4px}
+caption{text-align:left;font-size:11.5px;color:var(--text-muted);padding-bottom:8px;
+  letter-spacing:.04em;text-transform:uppercase;font-weight:600}
+th,td{text-align:right;padding:8px 10px;border-bottom:1px solid var(--border);
+  font-variant-numeric:tabular-nums;color:var(--text-secondary)}
+th:first-child,td:first-child{text-align:left;font-variant-numeric:normal}
+thead th{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--text-muted);
+  font-weight:700;border-bottom:2px solid var(--gold)}
+tbody tr:last-child td{border-bottom:1px solid var(--baseline)}
+tr.tot td{font-weight:700;color:var(--text-primary);background:var(--gold-wash)}
+td.pos,td.good{color:var(--good-ink);font-weight:650}
+td.neg{color:var(--bad-ink);font-weight:650}
+
+/* ---------- misc ---------- */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media (max-width:640px){.two{grid-template-columns:1fr}.topbar{margin:0 -24px}}
+.foot{margin-top:54px;border-top:3px solid var(--gold);padding-top:0}
+.foot-band{background:var(--band);color:#fff;margin:0 -24px;padding:26px 24px;font-size:12.5px;line-height:1.7}
+.foot-band b{color:var(--gold);font-weight:600}
+.foot-band .tag{font-size:14px;color:var(--gold);letter-spacing:.02em;margin:0 0 14px;font-style:italic}
+.foot-legal{font-size:11.5px;color:var(--text-muted);line-height:1.62;padding-top:18px}
+.srcs{margin:8px 0 0;padding:0;list-style:none}
+.srcs li{padding-left:0;margin:4px 0;color:var(--text-muted)}
+.srcs li::before{display:none}
+
+.viz-tip{position:fixed;top:0;left:0;pointer-events:none;opacity:0;transition:opacity .1s;
+  background:#212529;color:#fff;font-size:12.5px;line-height:1.45;
+  padding:8px 11px;z-index:99;max-width:270px;border-left:2px solid var(--gold);
+  box-shadow:0 4px 16px rgba(0,0,0,.2)}
+.viz-tip b{display:block;font-weight:700;margin-bottom:1px;color:var(--gold)}
+.viz-tip span{opacity:.9}
+
+#themeBtn{position:fixed;right:16px;bottom:16px;z-index:50;background:var(--card);
+  color:var(--text-secondary);border:1px solid var(--border);
+  padding:8px 15px;font:inherit;font-size:12.5px;font-weight:600;cursor:pointer;
+  box-shadow:0 2px 10px rgba(0,0,0,.1)}
+#themeBtn:hover{color:var(--text-primary);border-color:var(--gold)}
+
+@media print{
+  #themeBtn,.tbtn{display:none}
+  body{background:#fff;font-size:11pt}
+  .wrap{max-width:none;padding:0 12px}
+  .topbar,.foot-band{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  section{page-break-inside:auto}
+  figure,.callout,.pull,.kpis{page-break-inside:avoid}
+  .sec-h{page-break-after:avoid}
+  [hidden]{display:table !important}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="topbar">
+  <span class="wordmark">Brixton <i>Capital</i></span>
+  <span class="topbar-r">Investor Brief</span>
+</div>
+<div class="goldrule"></div>
+
+<header class="mast">
+  <div class="mast-top">
+    <span class="brand">Multifamily · Q2 2026</span>
+    <span class="issue">Volume 3, No. 2 · August 2026</span>
+  </div>
+  <h1>The Windsor</h1>
+  <p class="sub">Second-quarter operating results, submarket conditions, and outlook for the balance of 2026.</p>
+  <div class="meta">
+    <span><b>Location</b> &nbsp;Lakewood, CO 80227</span>
+    <span><b>Units</b> &nbsp;352</span>
+    <span><b>Asset Manager</b> &nbsp;Zebby Rosales</span>
+    <span><b>Reporting date</b> &nbsp;06/30/2026</span>
+  </div>
+</header>
+
+<div class="ribbon"><span>Q2 2026 Results</span><span>NOI ahead of plan · 2nd consecutive quarter</span></div>
+
+<div class="hero">
+  <div class="hero-fig">
+    <span class="n">$3.80M</span>
+    <span class="u"></span>
+    <span class="cap">Year-to-date net operating income, <b>2.1% ahead of budget</b></span>
+  </div>
+  <div class="hero-note">
+    <p>The Windsor delivered <strong>NOI above plan for a second consecutive quarter</strong>, with expense savings more than offsetting modest revenue softness in a Denver market still working through its supply cycle.</p>
+    <p style="margin-bottom:0">The more consequential development was operational: <strong>physical occupancy climbed 350 basis points in a single quarter</strong>, and the property posted <strong>positive lease trade-outs on both new leases and renewals</strong> while market rents across the submarket and metro continued to decline.</p>
+    <span class="pill">↑ Occupancy 91.4% → 94.9% in Q2</span>
+  </div>
+</div>
+
+<div class="kpis">
+  <div class="kpi"><div class="l">Q2 NOI</div><div class="v">$1.89M</div><div class="d"><span class="up">+2.1%</span> vs. budget</div></div>
+  <div class="kpi"><div class="l">Physical occupancy</div><div class="v">94.9%</div><div class="d"><span class="up">+350 bps</span> vs. 3/31/26</div></div>
+  <div class="kpi"><div class="l">Blended trade-out</div><div class="v">+2.8%</div><div class="d">effective, 147 leases H1</div></div>
+  <div class="kpi"><div class="l">Operating expenses</div><div class="v">−11.2%</div><div class="d"><span class="up">$187K</span> under budget</div></div>
+</div>
+
+<!-- ============ 01 ============ -->
+<section>
+  <div class="sec-h"><span class="num">01</span><h2>The quarter in brief</h2></div>
+  <p class="lede">Four things happened in Q2 that matter more than the headline numbers.</p>
+  <ul>
+    <li><strong>Occupancy inflected.</strong> Physical occupancy finished at <strong>94.9%</strong> (334 of 352 units), up from 91.4% at March 31 and <strong>220 bps ahead of budget</strong>. Forty-eight new leases commenced during the quarter, with thirteen additional approved applications in hand at quarter-end.</li>
+    <li><strong>We grew rents while the market shrank them.</strong> Blended lease trade-outs of <strong>+2.1% gross / +2.8% effective</strong> across 147 leases — including <em>positive</em> new-lease trade-outs, at a moment when roughly half of Denver apartments are offering concessions.</li>
+    <li><strong>Expense discipline carried the quarter.</strong> Controllable operating expenses finished <strong>$137K (11.9%) under budget</strong>, with contract services, repairs and maintenance, turnover, and administrative costs each landing 25–31% below plan.</li>
+    <li><strong>The heavy capital is behind us.</strong> The <strong>$1.66M exterior capital program is complete</strong>. Remaining spend is concentrated in high-return interior renovations, funded from retained operating cash flow.</li>
+  </ul>
+
+  <div class="callout">
+    <span class="k">Why this matters</span>
+    <p>Denver is in the early innings of a recovery from a historic supply wave. Market vacancy peaked at 12.2% in late 2025 and has since compressed to 10.4%; deliveries are falling sharply; and CoStar projects a return to positive rent growth. The Windsor is entering that recovery <strong>already stabilized at 94.9% occupancy</strong> — rather than fighting to lease up into it.</p>
+  </div>
+</section>
+
+<!-- ============ 02 ============ -->
+<section>
+  <div class="sec-h"><span class="num">02</span><h2>Operating results</h2></div>
+
+  <table>
+    <caption>Year-to-date through 06/30/2026 vs. budget</caption>
+    <thead><tr><th>&nbsp;</th><th>YTD actual</th><th>Budget</th><th>Variance</th></tr></thead>
+    <tbody>
+      <tr><td>Average rent / month</td><td>$2,678</td><td>$2,693</td><td>−0.6%</td></tr>
+      <tr><td>Physical occupancy (6/30/26)</td><td>94.9%</td><td>92.7%</td><td class="pos">+220 bps</td></tr>
+      <tr><td>Gross scheduled rent</td><td>$5,656,765</td><td>$5,688,076</td><td>−0.6%</td></tr>
+      <tr><td>Economic vacancy</td><td>($598,665)</td><td>($526,123)</td><td class="neg">−12.1%</td></tr>
+      <tr><td>Other income</td><td>$223,562</td><td>$227,414</td><td>−1.7%</td></tr>
+      <tr class="tot"><td>Total revenue</td><td>$5,281,704</td><td>$5,389,368</td><td class="neg">−2.0%</td></tr>
+      <tr><td>Operating expenses</td><td>$1,477,640</td><td>$1,664,457</td><td class="pos">−11.2%</td></tr>
+      <tr class="tot"><td>Net operating income</td><td>$3,804,064</td><td>$3,724,911</td><td class="pos">+2.1%</td></tr>
+      <tr><td>Distributions</td><td>$630,000</td><td>$630,000</td><td>0.0%</td></tr>
+      <tr><td>Cash-on-cash</td><td>2.3%</td><td>2.3%</td><td>0.0%</td></tr>
+    </tbody>
+  </table>
+  <p class="fig-f">Distributions are paid on capital remaining invested following the approximately $6.1M return of equity previously distributed to investors.</p>
+
+  <h3>Expense performance was broad, not concentrated</h3>
+  <p>The savings did not come from one line item or a single deferral. Six of eight controllable categories finished under plan, four of them by more than a quarter.</p>
+
+  <table>
+    <caption>Controllable operating expenses — H1 2026 actual vs. budget</caption>
+    <thead><tr><th>Category</th><th>H1 actual</th><th>H1 budget</th><th>Variance</th></tr></thead>
+    <tbody>
+      <tr><td>Contract services</td><td>$92,642</td><td>$127,555</td><td class="good">−27.4%</td></tr>
+      <tr><td>Operating &amp; maintenance</td><td>$80,527</td><td>$115,022</td><td class="good">−30.0%</td></tr>
+      <tr><td>Turnover cost</td><td>$40,135</td><td>$57,828</td><td class="good">−30.6%</td></tr>
+      <tr><td>Administrative</td><td>$51,819</td><td>$69,026</td><td class="good">−24.9%</td></tr>
+      <tr><td>Payroll</td><td>$428,320</td><td>$446,770</td><td class="good">−4.1%</td></tr>
+      <tr><td>Utilities</td><td>$158,101</td><td>$173,582</td><td class="good">−8.9%</td></tr>
+      <tr><td>Management fee</td><td>$118,766</td><td>$120,466</td><td>−1.4%</td></tr>
+      <tr><td>Advertising</td><td>$45,990</td><td>$43,183</td><td class="neg">+6.5%</td></tr>
+      <tr class="tot"><td>Total controllable</td><td>$1,016,299</td><td>$1,153,431</td><td class="good">−11.9%</td></tr>
+    </tbody>
+  </table>
+
+  <p>Two structural initiatives sit behind these figures. A <strong>property-level insurance captive</strong> reset the insurance line from a 2025 run-rate of roughly $37,000 per month to a 2026 budget of approximately $24,000 per month. Separately, <strong>payroll efficiencies from sharing on-site management resources across our Denver portfolio</strong> have reduced staffing cost without reducing service coverage — a benefit available specifically because The Windsor sits within a larger regional platform.</p>
+
+  <figure>
+    <figcaption>Figure 1</figcaption>
+    <p class="fig-t">Economic vacancy has fallen to a twelve-month low</p>
+    <p class="fig-s">Monthly vacancy loss, July 2025 – June 2026. June's $51K was the lowest month of the trailing twelve and 43% below the February peak — the clearest single indicator of the leasing turn.</p>
+    <div class="plot" id="p1"></div>
+    <p class="fig-f">Source: The Windsor operating statements, Jul 2025 – Jun 2026. June 2026 was also the strongest revenue month of the period at $921K.</p>
+    <button class="tbtn" data-tbl="t1" aria-expanded="false">Show data table</button>
+    <div id="t1" hidden>
+      <table><caption>Monthly vacancy loss ($000s)</caption>
+      <thead><tr><th>Month</th><th>Vacancy loss</th><th>% of GPR</th></tr></thead><tbody>
+      <tr><td>Jul 2025</td><td>$87.8</td><td>9.4%</td></tr>
+      <tr><td>Aug 2025</td><td>$87.2</td><td>9.1%</td></tr>
+      <tr><td>Sep 2025</td><td>$87.0</td><td>9.1%</td></tr>
+      <tr><td>Oct 2025</td><td>$80.6</td><td>8.4%</td></tr>
+      <tr><td>Nov 2025</td><td>$68.0</td><td>7.1%</td></tr>
+      <tr><td>Dec 2025</td><td>$71.0</td><td>7.4%</td></tr>
+      <tr><td>Jan 2026</td><td>$73.5</td><td>7.6%</td></tr>
+      <tr><td>Feb 2026</td><td>$88.9</td><td>9.2%</td></tr>
+      <tr><td>Mar 2026</td><td>$86.7</td><td>9.0%</td></tr>
+      <tr><td>Apr 2026</td><td>$79.0</td><td>8.2%</td></tr>
+      <tr><td>May 2026</td><td>$63.1</td><td>6.5%</td></tr>
+      <tr class="tot"><td>Jun 2026</td><td>$51.0</td><td>5.3%</td></tr>
+      </tbody></table>
+    </div>
+  </figure>
+
+  <p>Credit quality improved alongside occupancy. <strong>Second-quarter bad debt was effectively nil</strong> — $84 of write-offs against $5,132 of recoveries, a net recovery for the quarter. Revenue variance to budget narrowed from −2.9% in Q1 to −1.1% in Q2.</p>
+</section>
+
+<!-- ============ 03 ============ -->
+<section>
+  <div class="sec-h"><span class="num">03</span><h2>Leasing and rent performance</h2></div>
+  <p class="lede">The single most differentiating result of the quarter: The Windsor is achieving positive rent trade-outs in a submarket where market rents are falling.</p>
+
+  <table>
+    <caption>Lease trade-outs, 01/01/2026 – 06/30/2026</caption>
+    <thead><tr><th>&nbsp;</th><th>Leases</th><th>Gross trade-out</th><th>Effective trade-out</th><th>Per month</th></tr></thead>
+    <tbody>
+      <tr><td>New leases</td><td>43</td><td class="pos">+1.1%</td><td class="pos">+1.9%</td><td>+$29</td></tr>
+      <tr><td>Renewals</td><td>104</td><td class="pos">+2.4%</td><td class="pos">+3.2%</td><td>+$64</td></tr>
+      <tr class="tot"><td>All leases</td><td>147</td><td class="pos">+2.1%</td><td class="pos">+2.8%</td><td>+$54</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>Renewals outnumbered new leases 104 to 43</strong> — 71% of all leasing activity was retention. That is deliberate, and it aligns with what CoStar reports operators across the metro are doing:</p>
+
+  <div class="pull">“Local landlords and property managers are focused renewals, as these rates are typically higher than what could be replaced in the current competitive environment.”
+  <span class="attr">CoStar, Denver Multi-Family Market Report, August 2026</span></div>
+
+  <p>Average scheduled rent finished at <strong>$2,682 per unit in Q2</strong>, within 0.9% of budget, and $2,678 year-to-date, within 0.6% of plan. The combination matters: <strong>the property gained 220 basis points of occupancy against budget without discounting rate to get it.</strong> Average vacant days ran 37.5 in the first half.</p>
+
+  <figure>
+    <figcaption>Figure 2</figcaption>
+    <p class="fig-t">Rent direction: The Windsor versus its market</p>
+    <p class="fig-s">The Windsor's blended effective lease trade-out for the first half of 2026, against trailing-twelve-month market effective rent growth for the submarket and metro.</p>
+    <div class="plot" id="p2"></div>
+    <p class="fig-f">Not a like-for-like comparison: The Windsor's figure is a signed-lease trade-out across six months; CoStar's are trailing-twelve-month market rent indices. Presented to show direction of travel, not to equate the two measures. Sources: Windsor lease trade-out report; CoStar, August 2026.</p>
+    <button class="tbtn" data-tbl="t2" aria-expanded="false">Show data table</button>
+    <div id="t2" hidden>
+      <table><caption>Effective rent direction</caption>
+      <thead><tr><th>&nbsp;</th><th>Change</th><th>Basis</th></tr></thead><tbody>
+      <tr class="tot"><td>The Windsor</td><td>+2.8%</td><td>Blended effective trade-out, H1 2026, 147 leases</td></tr>
+      <tr><td>Lakewood / West Corridor</td><td>−2.5%</td><td>Market effective rent growth, trailing 12 months</td></tr>
+      <tr><td>Denver Metro</td><td>−2.7%</td><td>Market effective rent growth, trailing 12 months</td></tr>
+      </tbody></table>
+    </div>
+  </figure>
+</section>
+
+<!-- ============ 04 ============ -->
+<section>
+  <div class="sec-h"><span class="num">04</span><h2>Positioning against the market</h2></div>
+
+  <figure>
+    <figcaption>Figure 3</figcaption>
+    <p class="fig-t">Occupancy: 350 bps above the submarket, 530 bps above the metro</p>
+    <p class="fig-s">Physical occupancy at The Windsor as of 06/30/2026, against submarket and metro occupancy per CoStar.</p>
+    <div class="plot" id="p3"></div>
+    <p class="fig-f">Sources: Windsor rent roll as of 06/30/2026 (334 of 352 units occupied); CoStar Lakewood/West Corridor and Denver market reports, 8/4/2026.</p>
+    <button class="tbtn" data-tbl="t3" aria-expanded="false">Show data table</button>
+    <div id="t3" hidden>
+      <table><caption>Occupancy comparison</caption>
+      <thead><tr><th>&nbsp;</th><th>Occupancy</th><th>Vacancy</th><th>Spread to Windsor</th></tr></thead><tbody>
+      <tr class="tot"><td>The Windsor</td><td>94.9%</td><td>5.1%</td><td>—</td></tr>
+      <tr><td>Lakewood / West Corridor</td><td>91.4%</td><td>8.6%</td><td>+350 bps</td></tr>
+      <tr><td>Denver Metro</td><td>89.6%</td><td>10.4%</td><td>+530 bps</td></tr>
+      </tbody></table>
+    </div>
+  </figure>
+
+  <h3>Why the property holds rate while the submarket discounts</h3>
+  <ul>
+    <li><strong>Rent per square foot exceeds the submarket's luxury tier.</strong> The Windsor's in-place rent of <strong>$2.40/SF</strong> sits above the submarket's 4 &amp; 5 Star <em>asking</em> rent of $2.28/SF, and 14% above its <em>effective</em> rent of $2.10/SF — achieved without luxury-tier lease-up risk or concession burn.</li>
+    <li><strong>Unit size is a structural advantage.</strong> The Windsor averages <strong>1,115 SF per unit</strong> against roughly 840 SF implied for the submarket and 831 SF across the last twelve months of submarket sale comparables — <strong>more than 30% larger than the competing product.</strong> The new supply pressuring this submarket is small-format 4 &amp; 5 Star infill along the W Line and West Colfax; it does not compete for the same renter.</li>
+    <li><strong>The rent roll is marked close to market.</strong> Loss-to-lease on occupied units is only <strong>2.6%</strong> ($894,596 actual against $918,458 market rent), so reported income does not depend on an embedded mark-up to hold up.</li>
+  </ul>
+</section>
+
+<!-- ============ 05 ============ -->
+<section>
+  <div class="sec-h"><span class="num">05</span><h2>Capital program and value creation</h2></div>
+
+  <div class="two">
+    <div>
+      <h3 style="margin-top:0">Exterior — complete</h3>
+      <p>The <strong>$1.66M exterior program is finished.</strong> Roofs, structural frame repairs, slurry and concrete, three pool resurfaces, radon mitigation, keyless entry and vehicle gates, exterior lighting, mailboxes, dog park, sports court and BBQ areas have all been delivered. Deferred-maintenance and life-safety exposure has been retired, and the asset now competes on amenity quality rather than deferred condition.</p>
+    </div>
+    <div>
+      <h3 style="margin-top:0">Interior — accelerating</h3>
+      <p>The interior renovation program covers <strong>58 units: 49 complete, 7 in progress, 2 pending start.</strong> Across the 48 completed units with post-renovation rent data, premiums average <strong>$465 per month at a 20.6% return on cost</strong>, a payback of roughly 4.9 years. Eight units were completed during Q2 with nine more identified or underway.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="k">Funded from cash flow</span>
+    <p>The renovation program is being funded from retained operating cash flow rather than a capital call or reserve draw. Cash on hand at June 30 was <strong>$916K</strong> (including $714K of operating cash), with approximately <strong>$845K</strong> additionally held in tax, insurance, repair and deferred-maintenance escrows.</p>
+  </div>
+
+  <p>Renovation premiums have moderated as the market has softened — the ten units completed during 2026 average approximately $334 per month at a 16.6% return on cost, against $465 and 20.6% for the completed program overall. That remains an attractive return on incremental capital, and it is the reason the program is being <strong>paced to market conditions</strong> rather than pushed through in a single campaign.</p>
+</section>
+
+<!-- ============ 06 ============ -->
+<section>
+  <div class="sec-h"><span class="num">06</span><h2>Submarket: Lakewood / West Corridor</h2></div>
+  <p class="lede">The Windsor's submarket has outperformed the Denver metro throughout the downturn, and its supply pipeline has a visible, dated end point.</p>
+  <ul>
+    <li><strong>Occupancy of 91.4%</strong> (8.6% vacancy) against 89.6% for the metro — <strong>180 basis points tighter than the market.</strong></li>
+    <li><strong>Rents held up materially better.</strong> Asking rents eased just <strong>−0.5% year over year</strong> to roughly $1,753 per month, against −1.5% for the Denver metro.</li>
+    <li><strong>Supply is nearly finished.</strong> Approximately <strong>720 units remain under construction across four projects</strong>, down from a peak of roughly 2,000 units in early 2022. Nearly all of it delivers by <strong>October 2026</strong>, and <strong>no new construction starts are scheduled until 2027.</strong></li>
+    <li><strong>This is not a supply hot zone.</strong> Only 2.8% of submarket inventory is under construction, well below Englewood/Littleton (14.6%), Broomfield County (8.6%), DTC/Southeast Corridor (7.0%), and South Douglas County (6.9%).</li>
+    <li><strong>CoStar forecasts a clean recovery:</strong> vacancy tightening to <strong>8.2% by 2027</strong> and 7.5% by 2030, with asking rent growth returning to <strong>+3.1% in 2027</strong> and averaging +2.5% annually through 2030.</li>
+    <li><strong>Long-run stability.</strong> The submarket's historical average rent growth is 1.9% against an average vacancy of 6.5% — a low-volatility submarket, not a boom-and-bust one.</li>
+  </ul>
+  <p>Demand drivers are durable: direct RTD W Line connectivity to downtown Denver, ongoing redevelopment along the West Colfax corridor, and the established Belmar retail and lifestyle node.</p>
+  <p class="fig-f" style="margin-top:18px"><strong>A note on the near term.</strong> CoStar's full-year 2026 forecast puts submarket vacancy at 10.0%, above today's 8.6%, as the final tranche of units delivers through October. That pressure is concentrated in the 4 &amp; 5 Star segment, forecast at 11.2% vacancy for 2026 — a different product and a different renter than The Windsor's large-format units. The forecast reverses sharply thereafter.</p>
+</section>
+
+<!-- ============ 07 ============ -->
+<section>
+  <div class="sec-h"><span class="num">07</span><h2>Denver metro: the supply wave is breaking</h2></div>
+
+  <figure>
+    <figcaption>Figure 4</figcaption>
+    <p class="fig-t">Deliveries have fallen below the pre-pandemic norm</p>
+    <p class="fig-s">Denver metro multifamily unit deliveries. 2026 completions are projected below the 2015–2019 average for the first time since the supply cycle began.</p>
+    <div class="plot" id="p4"></div>
+    <p class="fig-f">Source: CoStar, Denver Multi-Family Market Report, 8/4/2026. Units under construction have fallen to 4.0% of inventory from 12% in early 2024.</p>
+    <button class="tbtn" data-tbl="t4" aria-expanded="false">Show data table</button>
+    <div id="t4" hidden>
+      <table><caption>Denver metro deliveries</caption>
+      <thead><tr><th>Year</th><th>Units delivered</th></tr></thead><tbody>
+      <tr><td>2024 (cycle peak)</td><td>18,000</td></tr>
+      <tr><td>2025</td><td>12,400</td></tr>
+      <tr class="tot"><td>2026 (projected)</td><td>8,100</td></tr>
+      <tr><td>2015–2019 average</td><td>9,000</td></tr>
+      </tbody></table>
+    </div>
+  </figure>
+
+  <ul>
+    <li><strong>Vacancy has inflected.</strong> Metro vacancy peaked at <strong>12.2% in late 2025</strong> and has compressed to <strong>10.4%</strong> — occupancy up from 87.8% to 89.6%.</li>
+    <li><strong>Demand is genuinely strong.</strong> <strong>12,044 units absorbed</strong> over the trailing twelve months, roughly 20% above the pre-pandemic five-year average, with Q2 2026 the strongest absorption reading on record.</li>
+    <li><strong>2026 is the first year in five in which demand is projected to outpace new supply.</strong></li>
+    <li><strong>Rent growth is turning.</strong> −1.5% year over year, improved from −3.3% in 2025. CoStar forecasts <strong>+1.9% in 2026 and +3.2% in 2027</strong>, with occupancy improving toward 91% by 2030.</li>
+    <li><strong>Future supply faces structural barriers.</strong> Denver's Affordable Housing Policy (an 8–15% affordable set-aside on developments of ten or more units), permitting delays, and elevated construction and labor costs have caused new starts to fall sharply. The next supply wave is years away.</li>
+  </ul>
+</section>
+
+<!-- ============ 08 ============ -->
+<section>
+  <div class="sec-h"><span class="num">08</span><h2>Capital position and outlook</h2></div>
+
+  <div class="two">
+    <div>
+      <h3 style="margin-top:0">Debt</h3>
+      <table>
+        <tbody>
+        <tr><td>Lender</td><td>Freddie Mac</td></tr>
+        <tr><td>Outstanding balance</td><td>$80,762,000</td></tr>
+        <tr><td>Rate</td><td>5.56% fixed</td></tr>
+        <tr><td>Structure</td><td>Full-term interest only</td></tr>
+        <tr><td>Maturity</td><td>03/01/2029</td></tr>
+        <tr class="tot"><td>Debt yield (T12 NOI)</td><td>9.11%</td></tr>
+        <tr class="tot"><td>Debt service coverage</td><td>1.62x</td></tr>
+        </tbody>
+      </table>
+      <p class="fig-f">Debt yield on trailing-twelve-month NOI of $7.36M; 9.42% on first-half 2026 annualized NOI of $7.61M. The loan remains in good standing with no covenant issues.</p>
+    </div>
+    <div>
+      <h3 style="margin-top:0">Q3 2026 projection</h3>
+      <table>
+        <tbody>
+        <tr><td>Rent / month</td><td>$2,744</td></tr>
+        <tr><td>Average occupancy</td><td>92.7%</td></tr>
+        <tr><td>Gross scheduled rent</td><td>$2,897,620</td></tr>
+        <tr><td>Economic vacancy</td><td>($256,853)</td></tr>
+        <tr><td>Other income</td><td>$114,222</td></tr>
+        <tr class="tot"><td>Revenue</td><td>$2,754,988</td></tr>
+        <tr><td>Operating expenses</td><td>$853,043</td></tr>
+        <tr class="tot"><td>NOI</td><td>$1,901,945</td></tr>
+        <tr><td>Distributions</td><td>$315,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <h3>Transaction market</h3>
+  <p>Investment liquidity in the submarket has held up. Lakewood/West Corridor recorded approximately <strong>$547M of sales volume</strong> over the trailing twelve months; separately, CoStar tracks 44 sale comparables in the submarket averaging $265,000 per unit at a 6.4% average capitalization rate, with pricing still well above pre-pandemic levels. Four transactions above $46M closed in the period:</p>
+
+  <table>
+    <caption>Selected Lakewood / West Corridor sales, trailing twelve months</caption>
+    <thead><tr><th>Property</th><th>Units</th><th>Built</th><th>Date</th><th>Price</th><th>Per unit</th></tr></thead>
+    <tbody>
+      <tr><td>Avana Belmar</td><td>512</td><td>1988</td><td>09/30/25</td><td>$144.1M</td><td>$281,353</td></tr>
+      <tr><td>Silver Reef</td><td>419</td><td>1985</td><td>10/21/25</td><td>$105.0M</td><td>$250,477</td></tr>
+      <tr><td>The View at Golden Ridge</td><td>177</td><td>2015</td><td>11/18/25</td><td>$81.9M</td><td>$462,570</td></tr>
+      <tr><td>Westlink at Oak Station</td><td>244</td><td>2015</td><td>07/01/26</td><td>$71.6M</td><td>$293,237</td></tr>
+    </tbody>
+  </table>
+
+  <p>Across the broader metro, well-located quality continues to clear at tight pricing — recent transactions above $100M have generally traded between the mid-4% and low-5% range. CoStar's market capitalization rate for the submarket stands at <strong>5.6% today, forecast to compress to 5.5% in 2027 and 5.4% by 2028</strong>, with submarket price per unit projected to rise from $270,812 currently to $322,874 by 2030.</p>
+
+  <div class="callout">
+    <span class="k">Outlook</span>
+    <p>No disposition is planned; the property is in year three of a five-year hold. Ownership continues to evaluate potential recapitalization opportunities that may result in a liquidity event, and will provide a detailed update should we move closer to a signed term sheet. In the meantime the operating plan is unchanged: continue the interior renovation program, hold expense discipline, and convert the occupancy gain into sustained rent growth as the submarket's supply pipeline clears through October.</p>
+  </div>
+</section>
+
+<div class="foot">
+  <div class="foot-band">
+    <p class="tag">Maximizing Value — A Legacy of Outperformance</p>
+    As a vertically integrated operator of retail and multifamily properties with a long track record of success,
+    Brixton Capital has developed a hands-on approach to real estate investment that is engineered for value and built to protect.<br><br>
+    <b>Property</b> &nbsp;The Windsor · 8153 West Eastman Place, Lakewood, CO 80227 · 352 units · 392,522 SF<br>
+    <b>Asset Manager</b> &nbsp;Zebby Rosales · zrosales@brixtoncapital.com<br>
+    <b>© Copyright 2026 Brixton Capital LP</b>
+  </div>
+  <div class="foot-legal">
+    <ul class="srcs">
+      <li><b>Sources:</b> The Windsor Q2 2026 operating statements, 2026 budget, balance sheet, rent roll as of 06/30/2026, lease trade-out report (01/01/26–06/30/26), and interior renovation tracker.</li>
+      <li>CoStar Group, <i>Lakewood/West Corridor Multi-Family Submarket Report</i> and <i>Denver – CO USA Multi-Family Market Report</i>, both dated 8/4/2026, licensed to Brixton Capital.</li>
+    </ul>
+    <p style="margin-top:12px;font-size:11.5px;color:var(--text-muted)">This report is provided for informational purposes to existing investors in the ownership entity and does not constitute an offer to sell or a solicitation of an offer to buy any security. Forward-looking statements, projections, and third-party market forecasts reflect current expectations and are subject to change; actual results may differ materially. Past performance is not indicative of future results.</p>
+  </div>
+</div>
+
+</div>
+<script>/* Windsor newsletter — chart core. Design-system params come from CSS custom properties. */
+(function () {
+  const NS = 'http://www.w3.org/2000/svg';
+  const el = (n, a) => { const e = document.createElementNS(NS, n); for (const k in (a || {})) e.setAttribute(k, a[k]); return e; };
+  const cssv = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
+  function tokens() {
+    return {
+      s1: cssv('--series-1'), s1d: cssv('--series-1-dim'), neg: cssv('--series-neg'),
+      grid: cssv('--gridline'), axis: cssv('--baseline'), muted: cssv('--text-muted'),
+      sec: cssv('--text-secondary'), pri: cssv('--text-primary'), surf: cssv('--surface-1')
+    };
+  }
+
+  /* rect path with selectable rounded corners (r on the data-end only) */
+  function barPath(x, y, w, h, r, side) {
+    r = Math.max(0, Math.min(r, w / 2, h / 2));
+    if (r === 0 || w <= 0 || h <= 0) return `M${x},${y}h${w}v${h}h${-w}z`;
+    if (side === 'right') return `M${x},${y}h${w - r}a${r},${r} 0 0 1 ${r},${r}v${h - 2 * r}a${r},${r} 0 0 1 ${-r},${r}h${-(w - r)}z`;
+    if (side === 'left')  return `M${x + r},${y}h${w - r}v${h}h${-(w - r)}a${r},${r} 0 0 1 ${-r},${-r}v${-(h - 2 * r)}a${r},${r} 0 0 1 ${r},${-r}z`;
+    /* top (columns) */
+    return `M${x},${y + r}a${r},${r} 0 0 1 ${r},${-r}h${w - 2 * r}a${r},${r} 0 0 1 ${r},${r}v${h - r}h${-w}z`;
+  }
+
+  /* ---- shared tooltip ---- */
+  let tip;
+  function ensureTip() {
+    if (tip) return tip;
+    tip = document.createElement('div');
+    tip.className = 'viz-tip';
+    tip.setAttribute('role', 'status');
+    document.body.appendChild(tip);
+    return tip;
+  }
+  function showTip(html, evt) {
+    const t = ensureTip(); t.innerHTML = html; t.style.opacity = '1';
+    const r = t.getBoundingClientRect();
+    let x = evt.clientX + 14, y = evt.clientY - r.height - 10;
+    if (x + r.width > innerWidth - 8) x = evt.clientX - r.width - 14;
+    if (y < 8) y = evt.clientY + 18;
+    t.style.transform = `translate(${x}px, ${y}px)`;
+  }
+  function hideTip() { if (tip) tip.style.opacity = '0'; }
+
+  function attach(node, html) {
+    node.style.cursor = 'default';
+    node.addEventListener('mousemove', (e) => showTip(html, e));
+    node.addEventListener('mouseleave', hideTip);
+    node.setAttribute('tabindex', '0');
+    node.addEventListener('focus', (e) => {
+      const b = node.getBoundingClientRect();
+      showTip(html, { clientX: b.left + b.width / 2, clientY: b.top });
+    });
+    node.addEventListener('blur', hideTip);
+  }
+
+  /* ================= horizontal emphasis bars ================= */
+  function barH(mount, data, o) {
+    o = o || {}; const T = tokens();
+    const W = 720, padL = o.padL || 196, padR = 76, padT = 8, padB = 26;
+    const band = o.band || 44, thick = Math.min(24, band - 18);
+    const H = padT + data.length * band + padB;
+    const max = o.max != null ? o.max : Math.max(...data.map(d => d.v)) * 1.06;
+    const min = o.min != null ? o.min : 0;
+    const sx = v => padL + (v - min) / (max - min) * (W - padL - padR);
+    const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': o.aria || o.title || 'chart' });
+    svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+
+    (o.ticks || []).forEach(t => {
+      svg.appendChild(el('line', { x1: sx(t), x2: sx(t), y1: padT, y2: H - padB, stroke: T.grid, 'stroke-width': 1 }));
+      const lb = el('text', { x: sx(t), y: H - padB + 16, fill: T.muted, 'text-anchor': 'middle', class: 'tick' });
+      lb.textContent = (o.tickFmt ? o.tickFmt(t) : t); svg.appendChild(lb);
+    });
+
+    data.forEach((d, i) => {
+      const y = padT + i * band + (band - thick) / 2;
+      const x0 = sx(min), w = Math.max(2, sx(d.v) - x0);
+      const g = el('g', {});
+      g.appendChild(el('path', { d: barPath(x0, y, w, thick, 4, 'right'), fill: d.hi ? T.s1 : T.s1d }));
+      const nm = el('text', { x: padL - 14, y: y + thick / 2 + 5, fill: d.hi ? T.pri : T.sec, 'text-anchor': 'end', class: d.hi ? 'lab lab-hi' : 'lab' });
+      nm.textContent = d.k; g.appendChild(nm);
+      const vl = el('text', { x: x0 + w + 10, y: y + thick / 2 + 5, fill: d.hi ? T.pri : T.sec, class: d.hi ? 'val val-hi' : 'val' });
+      vl.textContent = d.lab; g.appendChild(vl);
+      const hit = el('rect', { x: padL, y: padT + i * band, width: W - padL - padR, height: band, fill: 'transparent' });
+      g.appendChild(hit);
+      attach(hit, `<b>${d.k}</b><span>${d.tip || d.lab}</span>`);
+      svg.appendChild(g);
+    });
+    svg.appendChild(el('line', { x1: padL, x2: padL, y1: padT, y2: H - padB, stroke: T.axis, 'stroke-width': 1 }));
+    mount.appendChild(svg);
+  }
+
+  /* ================= diverging horizontal bars ================= */
+  function divH(mount, data, o) {
+    o = o || {}; const T = tokens();
+    const W = 720, padL = o.padL || 196, padR = 76, padT = 8, padB = 26;
+    const band = 46, thick = Math.min(24, band - 20);
+    const H = padT + data.length * band + padB;
+    const m = o.max || Math.max(...data.map(d => Math.abs(d.v))) * 1.35;
+    const sx = v => padL + (v + m) / (2 * m) * (W - padL - padR);
+    const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': o.aria || 'chart' });
+    svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+    (o.ticks || []).forEach(t => {
+      if (t === 0) return;
+      svg.appendChild(el('line', { x1: sx(t), x2: sx(t), y1: padT, y2: H - padB, stroke: T.grid, 'stroke-width': 1 }));
+      const lb = el('text', { x: sx(t), y: H - padB + 16, fill: T.muted, 'text-anchor': 'middle', class: 'tick' });
+      lb.textContent = (t > 0 ? '+' : '') + t + '%'; svg.appendChild(lb);
+    });
+    data.forEach((d, i) => {
+      const y = padT + i * band + (band - thick) / 2;
+      const z = sx(0), xv = sx(d.v);
+      const pos = d.v >= 0;
+      const x = pos ? z : xv, w = Math.max(2, Math.abs(xv - z));
+      const g = el('g', {});
+      /* emphasis form: hue marks the subject, position left/right of zero carries the sign */
+      g.appendChild(el('path', { d: barPath(x, y, w, thick, 4, pos ? 'right' : 'left'), fill: d.hi ? T.s1 : T.s1d }));
+      const nm = el('text', { x: padL - 14, y: y + thick / 2 + 5, fill: d.hi ? T.pri : T.sec, 'text-anchor': 'end', class: d.hi ? 'lab lab-hi' : 'lab' });
+      nm.textContent = d.k; g.appendChild(nm);
+      const vl = el('text', { x: pos ? x + w + 10 : x - 10, y: y + thick / 2 + 5, fill: T.pri, 'text-anchor': pos ? 'start' : 'end', class: 'val val-hi' });
+      vl.textContent = d.lab; g.appendChild(vl);
+      const hit = el('rect', { x: padL, y: padT + i * band, width: W - padL - padR, height: band, fill: 'transparent' });
+      g.appendChild(hit); attach(hit, `<b>${d.k}</b><span>${d.tip || d.lab}</span>`);
+      svg.appendChild(g);
+    });
+    svg.appendChild(el('line', { x1: sx(0), x2: sx(0), y1: padT, y2: H - padB, stroke: T.axis, 'stroke-width': 1 }));
+    mount.appendChild(svg);
+  }
+
+  /* ================= vertical columns ================= */
+  function colV(mount, data, o) {
+    o = o || {}; const T = tokens();
+    const W = 720, padL = 52, padR = 16, padT = 26, padB = 44;
+    const H = o.h || 300;
+    const band = (W - padL - padR) / data.length;
+    const thick = Math.min(24, band - 14);
+    const max = o.max || Math.max(...data.map(d => d.v)) * 1.15;
+    const sy = v => padT + (1 - v / max) * (H - padT - padB);
+    const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': o.aria || 'chart' });
+    svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+    (o.ticks || []).forEach(t => {
+      svg.appendChild(el('line', { x1: padL, x2: W - padR, y1: sy(t), y2: sy(t), stroke: T.grid, 'stroke-width': 1 }));
+      const lb = el('text', { x: padL - 10, y: sy(t) + 4, fill: T.muted, 'text-anchor': 'end', class: 'tick' });
+      lb.textContent = (o.tickFmt ? o.tickFmt(t) : t); svg.appendChild(lb);
+    });
+    if (o.ref != null) {
+      svg.appendChild(el('line', { x1: padL, x2: W - padR, y1: sy(o.ref), y2: sy(o.ref), stroke: T.axis, 'stroke-width': 1 }));
+      /* park the label in clear space — default right edge, or at refLabAt (0–1 across the plot) */
+      const at = o.refLabAt != null ? o.refLabAt : 1;
+      const rx = padL + at * (W - padL - padR);
+      const anchor = o.refLabAnchor || (at >= 1 ? 'end' : 'middle');
+      const rl = el('text', { x: rx, y: sy(o.ref) - 9, fill: T.sec, 'text-anchor': anchor, class: 'reflab' });
+      rl.textContent = o.refLab; svg.appendChild(rl);
+    }
+    data.forEach((d, i) => {
+      const cx = padL + i * band + band / 2;
+      const y = sy(d.v), h = Math.max(2, (H - padB) - y);
+      const g = el('g', {});
+      g.appendChild(el('path', { d: barPath(cx - thick / 2, y, thick, h, 4, 'top'), fill: d.hi ? T.s1 : T.s1d }));
+      if (d.lab) {
+        const vl = el('text', { x: cx, y: y - 9, fill: d.hi ? T.pri : T.sec, 'text-anchor': 'middle', class: d.hi ? 'val val-hi' : 'val' });
+        vl.textContent = d.lab; g.appendChild(vl);
+      }
+      const xl = el('text', { x: cx, y: H - padB + 18, fill: d.hi ? T.sec : T.muted, 'text-anchor': 'middle', class: 'tick' });
+      xl.textContent = d.k; g.appendChild(xl);
+      if (d.k2) { const x2 = el('text', { x: cx, y: H - padB + 32, fill: T.muted, 'text-anchor': 'middle', class: 'tick' }); x2.textContent = d.k2; g.appendChild(x2); }
+      const hit = el('rect', { x: padL + i * band, y: padT, width: band, height: H - padT - padB, fill: 'transparent' });
+      g.appendChild(hit); attach(hit, `<b>${d.k}${d.k2 ? ' ' + d.k2 : ''}</b><span>${d.tip || d.lab}</span>`);
+      svg.appendChild(g);
+    });
+    svg.appendChild(el('line', { x1: padL, x2: W - padR, y1: H - padB, y2: H - padB, stroke: T.axis, 'stroke-width': 1 }));
+    mount.appendChild(svg);
+  }
+
+  /* ---- table-view toggles ---- */
+  function wireTables() {
+    document.querySelectorAll('[data-tbl]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const t = document.getElementById(btn.dataset.tbl);
+        const open = t.hasAttribute('hidden');
+        if (open) { t.removeAttribute('hidden'); btn.textContent = 'Hide data table'; btn.setAttribute('aria-expanded', 'true'); }
+        else { t.setAttribute('hidden', ''); btn.textContent = 'Show data table'; btn.setAttribute('aria-expanded', 'false'); }
+      });
+    });
+  }
+
+  /* ---- theme toggle ---- */
+  function wireTheme(render) {
+    const b = document.getElementById('themeBtn');
+    if (!b) return;
+    const isDark = () => {
+      const a = document.documentElement.getAttribute('data-theme');
+      return a ? a === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    };
+    b.textContent = isDark() ? 'Light mode' : 'Dark mode';
+    matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if (!document.documentElement.getAttribute('data-theme')) {
+        b.textContent = isDark() ? 'Light mode' : 'Dark mode';
+        document.querySelectorAll('.plot').forEach(p => p.innerHTML = ''); render();
+      }
+    });
+    b.addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-theme');
+      const next = cur === 'dark' ? 'light' : (cur === 'light' ? 'dark'
+        : (matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark'));
+      document.documentElement.setAttribute('data-theme', next);
+      b.textContent = next === 'dark' ? 'Light mode' : 'Dark mode';
+      document.querySelectorAll('.plot').forEach(p => p.innerHTML = '');
+      render();
+    });
+  }
+
+  window.VIZ = { barH, divH, colV, wireTables, wireTheme };
+})();
+</script>
+<script>
+function render(){
+  var vac=[{k:'Jul',v:87.8},{k:'Aug',v:87.2},{k:'Sep',v:87.0},{k:'Oct',v:80.6},
+    {k:'Nov',v:68.0},{k:'Dec',v:71.0},{k:'Jan',v:73.5},{k:'Feb',v:88.9,lab:'$89K'},
+    {k:'Mar',v:86.7},{k:'Apr',v:79.0},{k:'May',v:63.1},{k:'Jun',v:51.0,lab:'$51K',hi:true}];
+  var yr=['2025','2025','2025','2025','2025','2025','2026','2026','2026','2026','2026','2026'];
+  vac.forEach(function(d,i){d.k2=yr[i];d.tip='Vacancy loss $'+d.v.toFixed(1)+'K';});
+  VIZ.colV(document.getElementById('p1'),vac,{h:290,max:104,
+    ticks:[0,25,50,75,100],tickFmt:function(t){return '$'+t+'K';},
+    aria:'Column chart of monthly vacancy loss July 2025 through June 2026, declining to a low of 51 thousand dollars in June 2026'});
+
+  VIZ.divH(document.getElementById('p2'),[
+    {k:'The Windsor',v:2.8,lab:'+2.8%',hi:true,tip:'Blended effective lease trade-out, H1 2026, 147 leases'},
+    {k:'Lakewood / West Corridor',v:-2.5,lab:'−2.5%',tip:'Market effective rent growth, trailing 12 months'},
+    {k:'Denver Metro',v:-2.7,lab:'−2.7%',tip:'Market effective rent growth, trailing 12 months'}
+  ],{max:4,ticks:[-4,-2,0,2,4],aria:'Diverging bar chart: The Windsor plus 2.8 percent, submarket minus 2.5 percent, metro minus 2.7 percent'});
+
+  VIZ.barH(document.getElementById('p3'),[
+    {k:'The Windsor',v:94.9,lab:'94.9%',hi:true,tip:'334 of 352 units occupied at 06/30/2026'},
+    {k:'Lakewood / West Corridor',v:91.4,lab:'91.4%',tip:'8.6% vacancy — CoStar, Aug 2026'},
+    {k:'Denver Metro',v:89.6,lab:'89.6%',tip:'10.4% vacancy — CoStar, Aug 2026'}
+  ],{max:100,ticks:[0,25,50,75,100],tickFmt:function(t){return t+'%';},band:46,padL:196,
+    aria:'Bar chart of occupancy: Windsor 94.9 percent, submarket 91.4 percent, metro 89.6 percent'});
+
+  VIZ.colV(document.getElementById('p4'),[
+    {k:'2024',k2:'cycle peak',v:18000,lab:'18,000',tip:'Peak of the Denver construction cycle'},
+    {k:'2025',v:12400,lab:'12,400',tip:'12,400 units delivered'},
+    {k:'2026',k2:'projected',v:8100,lab:'8,100',hi:true,tip:'Projected — below the pre-pandemic average'}
+  ],{h:300,max:21000,ticks:[0,5000,10000,15000,20000],
+    tickFmt:function(t){return t?(t/1000)+'K':'0';},ref:9000,refLab:'2015–2019 avg · 9,000',refLabAt:0.666,refLabAnchor:'middle',
+    aria:'Column chart of Denver deliveries falling from 18,000 in 2024 to 8,100 projected in 2026'});
+}
+render(); VIZ.wireTables(); VIZ.wireTheme(render);
+</script>
+</body>
+</html>
