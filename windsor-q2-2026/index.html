@@ -699,11 +699,7 @@ td.neg{color:var(--bad-ink);font-weight:650}
     });
     if (o.ref != null) {
       svg.appendChild(el('line', { x1: padL, x2: W - padR, y1: sy(o.ref), y2: sy(o.ref), stroke: T.axis, 'stroke-width': 1 }));
-      /* park the label in clear space — default right edge, or at refLabAt (0–1 across the plot) */
-      const at = o.refLabAt != null ? o.refLabAt : 1;
-      const rx = padL + at * (W - padL - padR);
-      const anchor = o.refLabAnchor || (at >= 1 ? 'end' : 'middle');
-      const rl = el('text', { x: rx, y: sy(o.ref) - 9, fill: T.sec, 'text-anchor': anchor, class: 'reflab' });
+      const rl = el('text', { x: W - padR, y: sy(o.ref) - 8, fill: T.sec, 'text-anchor': 'end', class: 'reflab' });
       rl.textContent = o.refLab; svg.appendChild(rl);
     }
     data.forEach((d, i) => {
@@ -796,7 +792,7 @@ function render(){
     {k:'2025',v:12400,lab:'12,400',tip:'12,400 units delivered'},
     {k:'2026',k2:'projected',v:8100,lab:'8,100',hi:true,tip:'Projected — below the pre-pandemic average'}
   ],{h:300,max:21000,ticks:[0,5000,10000,15000,20000],
-    tickFmt:function(t){return t?(t/1000)+'K':'0';},ref:9000,refLab:'2015–2019 avg · 9,000',refLabAt:0.666,refLabAnchor:'middle',
+    tickFmt:function(t){return t?(t/1000)+'K':'0';},ref:9000,refLab:'2015–2019 average · 9,000',
     aria:'Column chart of Denver deliveries falling from 18,000 in 2024 to 8,100 projected in 2026'});
 }
 render(); VIZ.wireTables(); VIZ.wireTheme(render);
